@@ -3,7 +3,7 @@ const {privateDecrypt: dec} = require('crypto');
 const Busboy = require('busboy');
 
 const Router = x.Router();
-const PORT = 10001;
+const PORT = process.env.PORT || 10001;
 
 
 const app = x();

@@ -27,7 +27,7 @@ Router
         })
         res.send(result)
     })
-
+    app.use('/', Router)
 app.listen(PORT, () => {
 console.log(`Server listening at http://localhost:${PORT}`);
  });

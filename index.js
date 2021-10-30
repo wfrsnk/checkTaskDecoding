@@ -4,7 +4,7 @@ const Busboy = require('busboy');
 
 const Router = x.Router();
 const PORT = process.env.PORT || 10001;
-
+const hu = {'Content-Type': 'text/html; charset=utf-8'};
 
 const app = x();
 Router
@@ -27,7 +27,10 @@ Router
         })
         res.send(result)
     })
-    app.use('/', Router)
+app
+   .use('/', Router)
+   .use((r, rs, n) => rs.status(200).set(hu) && n());
+
 app.listen(PORT, () => {
 console.log(`Server listening at http://localhost:${PORT}`);
  });

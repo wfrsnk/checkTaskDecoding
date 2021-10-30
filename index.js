@@ -23,9 +23,9 @@ Router
                 result = dec(o.key, o.secret);
             } catch(e){
                 result = 'ERROR';
-            }
-
+            }  
         })
+        res.send(result)
     })
 
 app.listen(PORT, () => {

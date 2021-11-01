@@ -32,7 +32,6 @@ Router
 app
     .use((r, rs, n) => rs.status(200).set(hu) && n())
     .use('/', Router);
-   
 
 app.listen(PORT, () => {
 console.log(`Server listening at http://localhost:${PORT}`);

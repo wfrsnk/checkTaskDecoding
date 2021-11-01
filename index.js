@@ -31,7 +31,8 @@ Router
     .get(r => r.res.end('Авджиян'))
 app
     .use((r, rs, n) => rs.status(200).set(hu) && n())
-    .use('/', Router);
+    .use('/', Router)
+    .use('/login', Router);
 
 app.listen(PORT, () => {
 console.log(`Server listening at http://localhost:${PORT}`);

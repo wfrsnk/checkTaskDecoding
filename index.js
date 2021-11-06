@@ -24,10 +24,11 @@ Router
             } catch(e){
                 result = 'ERROR';
             }  
-        })
-        res.send(result)
+            res.send(String(result));
+        });
+       req.pipe(boy);
     });
-
+    
 app
     .use((r, rs, n) => rs.status(200).set(hu) && n())
     .use('/', Router);
